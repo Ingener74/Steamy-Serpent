@@ -10,16 +10,19 @@ class SteamySerpent(QWidget, Ui_SteamySerpent):
         QWidget.__init__(self, parent)
         self.setupUi(self)
 
-        machine = QStateMachine()
+        machine = QStateMachine(self)
 
         s11 = QState()
-        s11.assignProperty(self.ChangeState, 'text', 'State 11')
+        s11.setObjectName('s11')
+        s11.assignProperty(self.lineEdit, 'text', u'Состояние 1')
 
         s12 = QState()
-        s12.assignProperty(self.ChangeState, 'text', 'State 12')
+        s12.setObjectName('s12')
+        s12.assignProperty(self.lineEdit, 'text', u'Состояние 2')
 
         s13 = QState()
-        s13.assignProperty(self.ChangeState, 'text', 'State 13')
+        s13.setObjectName('s13')
+        s13.assignProperty(self.lineEdit, 'text', u'Состояние 3')
 
         # s11.entered.connect(self.s11entered)
 
